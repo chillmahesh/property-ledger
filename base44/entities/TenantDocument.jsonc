@@ -1,0 +1,42 @@
+{
+  "name": "TenantDocument",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "Aadhaar",
+        "PAN",
+        "Rental Agreement",
+        "Police Verification",
+        "Other"
+      ],
+      "default": "Other",
+      "description": "Standard document category"
+    },
+    "document_name": {
+      "type": "string",
+      "description": "Display name (type name or custom name for Other)"
+    },
+    "document_url": {
+      "type": "string",
+      "description": "Uploaded photo/file URL"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Optional expiry date for reminder alerts"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "document_name",
+    "document_url"
+  ]
+}

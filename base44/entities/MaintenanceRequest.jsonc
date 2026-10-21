@@ -1,0 +1,61 @@
+{
+  "name": "MaintenanceRequest",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string",
+      "description": "Reference to Tenant"
+    },
+    "property_id": {
+      "type": "string",
+      "description": "Reference to Property"
+    },
+    "service_type": {
+      "type": "string",
+      "enum": [
+        "Cleaning",
+        "AC Service",
+        "Electrician",
+        "Plumber",
+        "Furniture Repair",
+        "Painting",
+        "Deep Cleaning"
+      ],
+      "default": "Cleaning"
+    },
+    "description": {
+      "type": "string"
+    },
+    "preferred_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Requested",
+        "Scheduled",
+        "Assigned",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Requested"
+    },
+    "technician_name": {
+      "type": "string",
+      "description": "Assigned technician name"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "service_type",
+    "description"
+  ]
+}

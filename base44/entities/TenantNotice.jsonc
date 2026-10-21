@@ -1,0 +1,42 @@
+{
+  "name": "TenantNotice",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string",
+      "description": "Reference to Tenant"
+    },
+    "property_id": {
+      "type": "string",
+      "description": "Reference to Property"
+    },
+    "vacating_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Accepted",
+        "Rejected"
+      ],
+      "default": "Pending"
+    },
+    "admin_response": {
+      "type": "string",
+      "description": "Admin response to the notice"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "vacating_date",
+    "reason"
+  ]
+}

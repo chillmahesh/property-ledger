@@ -1,0 +1,72 @@
+{
+  "name": "Complaint",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string",
+      "description": "Reference to Tenant"
+    },
+    "property_id": {
+      "type": "string",
+      "description": "Reference to Property"
+    },
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Electrical",
+        "Water",
+        "Furniture",
+        "Cleaning",
+        "Internet",
+        "Security",
+        "Maintenance",
+        "Other"
+      ],
+      "default": "Maintenance"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "default": "Medium"
+    },
+    "description": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Photo of the issue"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Assigned",
+        "In Progress",
+        "Resolved",
+        "Closed"
+      ],
+      "default": "Open"
+    },
+    "admin_response": {
+      "type": "string",
+      "description": "Response or resolution notes from admin"
+    },
+    "resolved_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "title",
+    "category",
+    "description"
+  ]
+}
